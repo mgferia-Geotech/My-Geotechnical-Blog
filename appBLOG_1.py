@@ -4,9 +4,17 @@ from plotly.subplots import make_subplots
 import streamlit as st 
 from scipy.stats import beta, gaussian_kde
 
+
 # --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Geotechnical Engineering Blog", layout="centered")
 
+# --- CONFIGURACIÓN PARA MÓVILES (NUEVO) ---
+# Esto evita que el zoom se active al tocar con el dedo y quita la barra de herramientas
+plotly_config = {
+    'scrollZoom': False,
+    'displayModeBar': False,
+    'staticPlot': False,
+}
 
 # --- BLOG HEADER SECTION ---
 st.markdown("""
@@ -198,10 +206,11 @@ fig.update_layout(
     template="plotly_white", 
     barmode='overlay', 
     showlegend=False, 
-    height=500,
+    height=380,                                                                                                                                             
 
 # --- CAMBIO AQUÍ: Reducción de márgenes ---
     margin=dict(t=0, b=20, l=10, r=10),
+    dragmode=False, # Desactiva el arrastre del zoom    
     
     # Configuración del Eje X
     xaxis=dict(
@@ -309,7 +318,7 @@ fig1.add_trace(go.Scatter(x=[m_fs], y=[m_fs_y], mode='markers+text', marker=dict
                          text=[f"Prom: {m_fs:.2f}"], textposition="top center", 
                          textfont=dict(size=15)), row=1, col=2)
 
-fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=500, margin=dict(t=0, b=20, l=10, r=10))
+fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=450, margin=dict(t=0, b=20, l=10, r=10))
 # --- CAMBIO AQUÍ: Reducción de márgenes ---
 fig1.update_xaxes(title_text="Su (kPa)", range=[0, 150], row=1, col=1)
 fig1.update_yaxes(title_text="Frecuencia", range=[0, 1500], row=1, col=1)
@@ -403,7 +412,7 @@ with col_grafica:
 
     # Configuración de Layout y Escala 1:1
     fig.update_layout(
-        height=500,
+        height=250,
         margin=dict(t=20, b=20, l=10, r=10),
         template="plotly_white",
         showlegend=False
@@ -501,7 +510,7 @@ fig.add_trace(go.Scatter(x=kde_x2, y=kde_y2, line=dict(color='black', width=2)),
 fig.add_trace(go.Scatter(x=[m_fs2], y=[kde2(m_fs2)[0]*SAMPLES*0.05], mode='markers+text', text=[f"Mean: {m_fs2:.2f}"], textposition="top center", marker=dict(color='black')), row=2, col=2)
 
 # --- CONFIGURACIÓN FINAL ---
-fig.update_layout(height=800, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10))
+fig.update_layout(height=700, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10))
 fig.update_xaxes(title_text="Su (kPa)", range=[0, 130], row=1)
 fig.update_xaxes(title_text="Factor de Seguridad (FS)", range=[0.0, 3.0], row=2)
 fig.update_yaxes(title_text="Frecuencia", row=1, range=[0, 1500])
