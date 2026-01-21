@@ -237,7 +237,7 @@ fig.update_yaxes(range=[0, 2200])
 
 # Display in Streamlit
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True, config=plotly_config)
 
 st.info("💡 Observa cómo, aunque el valor más probable sigue siendo 70 kPa, el rango de valores posibles (mínimos y máximos) se expande drásticamente al variar el *$CoV$*. ")
 
@@ -318,7 +318,7 @@ fig1.add_trace(go.Scatter(x=[m_fs], y=[m_fs_y], mode='markers+text', marker=dict
                          text=[f"Prom: {m_fs:.2f}"], textposition="top center", 
                          textfont=dict(size=15)), row=1, col=2)
 
-fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=450, margin=dict(t=0, b=20, l=10, r=10))
+fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=450, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
 # --- CAMBIO AQUÍ: Reducción de márgenes ---
 fig1.update_xaxes(title_text="Su (kPa)", range=[0, 150], row=1, col=1)
 fig1.update_yaxes(title_text="Frecuencia", range=[0, 1500], row=1, col=1)
@@ -338,7 +338,7 @@ fig1.add_annotation(
     borderpad=4
 )
 
-st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig1, use_container_width=True, config=plotly_config)
 
 st.success("💡 Prueba esto: Cambia el valor del *CoV* y observa su impacto en la probabilidad de falla.")
 
@@ -412,17 +412,18 @@ with col_grafica:
 
     # Configuración de Layout y Escala 1:1
     fig.update_layout(
-        height=250,
+        height=3    50,
         margin=dict(t=20, b=20, l=10, r=10),
         template="plotly_white",
-        showlegend=False
+        showlegend=False, 
+        dragmode=False
     )
     
     # Aplicar escala 1:1 a ambos subplots
     fig.update_yaxes(scaleanchor="x", scaleratio=1, range=[base_depth, H+3])
     fig.update_xaxes(range=[-30, 15])
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=plotly_config)
 
 
 
@@ -510,7 +511,7 @@ fig.add_trace(go.Scatter(x=kde_x2, y=kde_y2, line=dict(color='black', width=2)),
 fig.add_trace(go.Scatter(x=[m_fs2], y=[kde2(m_fs2)[0]*SAMPLES*0.05], mode='markers+text', text=[f"Mean: {m_fs2:.2f}"], textposition="top center", marker=dict(color='black')), row=2, col=2)
 
 # --- CONFIGURACIÓN FINAL ---
-fig.update_layout(height=700, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10))
+fig.update_layout(height=700, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
 fig.update_xaxes(title_text="Su (kPa)", range=[0, 130], row=1)
 fig.update_xaxes(title_text="Factor de Seguridad (FS)", range=[0.0, 3.0], row=2)
 fig.update_yaxes(title_text="Frecuencia", row=1, range=[0, 1500])
@@ -520,7 +521,7 @@ fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=2, line_wid
 
 # Mostrar gráfico en Streamlit
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True, config=plotly_config)
 
 st.warning("En términos estadisticos diríamos que el talud del **Escenario 1 es casi 23 veces más propenso a fallar que el talud del Escenario 2**.", icon="⚠️")
   
