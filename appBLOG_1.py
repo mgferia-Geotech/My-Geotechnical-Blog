@@ -476,8 +476,8 @@ fig = make_subplots(
         f" ", #f"Escenario 1 - Pf: {pf1:.2%}"
         f" ", #f"Escenario 2 - Pf: {pf2:.2%}"
     ),
-    vertical_spacing=0.15,
-    horizontal_spacing=0.5
+    vertical_spacing=0.30,
+    horizontal_spacing=0.1
 )
 
 # --- TOP LEFT: Su 1 ---
@@ -545,6 +545,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
