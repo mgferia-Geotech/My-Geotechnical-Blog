@@ -525,7 +525,7 @@ fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=2, line_wid
 st.plotly_chart(fig, use_container_width=True, config=plotly_config)
 ratio = pf1 / pf2
 texto_ratio = f"{ratio:.0f}"
-st.warning(f"En términos estadisticos diríamos que el talud del **Escenario 1 es {texto_ratio} más propenso a fallar que el talud del Escenario 2**.", icon="⚠️")
+st.warning(f"En términos estadisticos diríamos que el talud del **Escenario 1 es {texto_ratio} veces más propenso a fallar que el talud del Escenario 2**.", icon="⚠️")
   
 
 st.divider() # Visual line separator
@@ -546,6 +546,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
