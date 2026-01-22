@@ -473,8 +473,8 @@ fig = make_subplots(
     subplot_titles=(
         f" ", #f"Escenario 1 Su - CoV: {cov1:.0%}"
         f" ", #f"Escenario 2 Su - CoV: {cov2:.0%}"
-        f"Escenario 1 - Pf: {pf1:.2%}", 
-        f"Escenario 2 - Pf: {pf2:.2%}"
+        f" ", #f"Escenario 1 - Pf: {pf1:.2%}"
+        f" ", #f"Escenario 2 - Pf: {pf2:.2%}"
     ),
     vertical_spacing=0.15,
     horizontal_spacing=0.1
@@ -513,8 +513,8 @@ fig.add_trace(go.Scatter(x=[m_fs2], y=[kde2(m_fs2)[0]*SAMPLES*0.05], mode='marke
 # --- CONFIGURACIÓN FINAL ---
 fig.update_layout(height=350, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
 fig.update_xaxes(title_text="Su (kPa)", range=[0, 130], row=1)
-fig.update_xaxes(title_text=f"Factor de Seguridad (FS)<br>Escenario 1<br><b>Pf: {pf1:.2%}</b>", range=[0.0, 3.0],row=2, col=1)
-fig.update_xaxes(title_text=f"Factor de Seguridad (FS)<br>Escenario 2<br><b>Pf: {pf2:.2%}</b>", range=[0.0, 3.0],row=2, col=2)
+fig.update_xaxes(title_text=f"Escenario 1<br><b>Pf: {pf1:.2%}</b>", range=[0.0, 3.0],row=2, col=1)
+fig.update_xaxes(title_text=f"Escenario 2<br><b>Pf: {pf2:.2%}</b>", range=[0.0, 3.0],row=2, col=2)
 fig.update_yaxes(title_text=" ", row=1, range=[0, 1500])
 fig.update_yaxes(title_text=" ", row=2, range=[0, 1500])
 fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=1, line_width=0.5)
@@ -545,6 +545,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
