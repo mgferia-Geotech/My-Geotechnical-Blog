@@ -511,7 +511,7 @@ fig.add_trace(go.Scatter(x=kde_x2, y=kde_y2, line=dict(color='black', width=2)),
 fig.add_trace(go.Scatter(x=[m_fs2], y=[kde2(m_fs2)[0]*SAMPLES*0.05], mode='markers+text', text=[f"Mean: {m_fs2:.2f}"], textposition="top center", marker=dict(color='black')), row=2, col=2)
 
 # --- CONFIGURACIÓN FINAL ---
-fig.update_layout(height=300, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=20, b=20, l=10, r=10), dragmode=False)
+fig.update_layout(height=300, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=20, b=50, l=10, r=10), dragmode=False)
 fig.update_xaxes(title_text="Su (kPa)", range=[0, 130], row=1)
 fig.update_xaxes(title_text=f"Escenario 1<br><b>Pf: {pf1:.2%}</b>", range=[0.0, 3.0],row=2, col=1)
 fig.update_xaxes(title_text=f"Escenario 2<br><b>Pf: {pf2:.2%}</b>", range=[0.0, 3.0],row=2, col=2)
@@ -545,6 +545,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
