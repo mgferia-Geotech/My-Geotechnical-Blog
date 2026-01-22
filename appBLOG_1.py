@@ -477,7 +477,7 @@ fig = make_subplots(
         f" ", #f"Escenario 2 - Pf: {pf2:.2%}"
     ),
     vertical_spacing=0.30,
-    horizontal_spacing=0.1
+    horizontal_spacing=0.2
 )
 
 # --- TOP LEFT: Su 1 ---
@@ -524,7 +524,7 @@ fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=2, line_wid
 
 st.plotly_chart(fig, use_container_width=True, config=plotly_config)
 
-st.warning("En términos estadisticos diríamos que el talud del **Escenario 1 es 20 o más veces más propenso a fallar que el talud del Escenario 2**.", icon="⚠️")
+st.warning("En términos estadisticos diríamos que el talud del **Escenario 1 es {pf1/pf2:.0f} o más veces más propenso a fallar que el talud del Escenario 2**.", icon="⚠️")
   
 
 st.divider() # Visual line separator
@@ -545,6 +545,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
