@@ -206,7 +206,7 @@ fig.update_layout(
     template="plotly_white", 
     barmode='overlay', 
     showlegend=False, 
-    height=380,                                                                                                                                             
+    height=250,                                                                                                                                             
 
 # --- CAMBIO AQUÍ: Reducción de márgenes ---
     margin=dict(t=0, b=20, l=10, r=10),
@@ -544,6 +544,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
