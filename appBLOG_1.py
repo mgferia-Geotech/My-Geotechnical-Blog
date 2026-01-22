@@ -232,7 +232,7 @@ fig.update_layout(
 )
 
 # Axis formatting
-fig.update_xaxes(range=[-10, 155])
+fig.update_xaxes(range=[-20, 170])
 fig.update_yaxes(range=[0, 2200])
 
 # Display in Streamlit
@@ -544,6 +544,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
