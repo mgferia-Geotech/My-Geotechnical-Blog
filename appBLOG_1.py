@@ -318,7 +318,7 @@ fig1.add_trace(go.Scatter(x=[m_fs], y=[m_fs_y], mode='markers+text', marker=dict
                          text=[f"Prom: {m_fs:.2f}"], textposition="top center", 
                          textfont=dict(size=15)), row=1, col=2)
 
-fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=450, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
+fig1.update_layout(template="plotly_white", barmode='overlay', showlegend=False, height=250, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
 # --- CAMBIO AQUÍ: Reducción de márgenes ---
 fig1.update_xaxes(title_text="Su (kPa)", range=[0, 150], row=1, col=1)
 fig1.update_yaxes(title_text="Frecuencia", range=[0, 1500], row=1, col=1)
@@ -544,6 +544,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
