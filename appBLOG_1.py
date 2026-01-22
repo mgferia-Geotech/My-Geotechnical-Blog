@@ -514,8 +514,8 @@ fig.add_trace(go.Scatter(x=[m_fs2], y=[kde2(m_fs2)[0]*SAMPLES*0.05], mode='marke
 fig.update_layout(height=700, template="plotly_white", barmode='overlay', showlegend=False, margin=dict(t=0, b=20, l=10, r=10), dragmode=False)
 fig.update_xaxes(title_text="Su (kPa)", range=[0, 130], row=1)
 fig.update_xaxes(title_text="Factor de Seguridad (FS)", range=[0.0, 3.0], row=2)
-fig.update_yaxes(title_text="Frecuencia", row=1, range=[0, 1500])
-fig.update_yaxes(title_text="Frecuencia", row=2, range=[0, 1500])
+fig.update_yaxes(title_text=" ", row=1, range=[0, 1500])
+fig.update_yaxes(title_text=" ", row=2, range=[0, 1500])
 fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=1, line_width=0.5)
 fig.add_vline(x=1.0, line_dash="dash", line_color="grey", row=2, col=2, line_width=0.5)
 
@@ -544,6 +544,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
