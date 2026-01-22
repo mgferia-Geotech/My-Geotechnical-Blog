@@ -412,7 +412,7 @@ with col_grafica:
 
     # Configuración de Layout y Escala 1:1
     fig.update_layout(
-        height=3    50,
+        height=350,
         margin=dict(t=20, b=20, l=10, r=10),
         template="plotly_white",
         showlegend=False, 
@@ -544,6 +544,7 @@ pero potencialmente engañoso. En geotecnia no buscamos la certeza absoluta, sin
 """)
 
 st.success('**Próxima entrega: *Estadística bayesiana* o porque los geotecnista somos *bayesianos* innatos**', icon="✍🏼")
+
 
 
 
